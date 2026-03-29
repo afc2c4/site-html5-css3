@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Curso de HTML5 e CSS3 com foco em estrutura semântica, responsividade, animações e construção de páginas modernas sem JavaScript."
+    >
+    <title>Curso de HTML5 e CSS3 | Estrutura, Estilo e Responsividade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand-block">
+                <span class="brand-kicker">Curso intensivo</span>
+                <a class="brand" href="#topo" aria-label="Ir para o topo da página">HTML5 + CSS3</a>
+            </div>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a href="#modulos">Módulos</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#metodo">Método</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <a class="header-cta" href="#inscricao">Quero aprender</a>
+        </header>
+
+        <main id="topo">
+            <section class="hero section-grid">
+                <div class="hero-copy reveal reveal-delay-1">
+                    <p class="eyebrow">Do primeiro elemento ao layout responsivo</p>
+                    <h1>Aprenda a criar sites em HTML5 e CSS3 com base sólida e acabamento profissional.</h1>
+                    <p class="hero-text">
+                        Um curso direto ao ponto para quem quer entender semântica, estilização moderna,
+                        responsividade de verdade e efeitos visuais elegantes, tudo sem depender de JavaScript.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#inscricao">Começar agora</a>
+                        <a class="button button-secondary" href="#modulos">Ver conteúdo</a>
+                    </div>
+
+                    <ul class="hero-highlights" aria-label="Destaques do curso">
+                        <li>HTML5 semântico e acessível</li>
+                        <li>CSS3 com grid, flexbox e media queries</li>
+                        <li>Transições, animações e estados interativos</li>
+                    </ul>
+                </div>
+
+                <div class="hero-panel reveal reveal-delay-2" aria-label="Resumo visual do curso">
+                    <div class="panel-card panel-card-main">
+                        <span class="panel-label">Trilha principal</span>
+                        <strong>12 aulas</strong>
+                        <p>Estrutura, estilo, composição visual e adaptação para mobile, tablet e desktop.</p>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <article class="metric-card">
+                            <span>Projeto final</span>
+                            <strong>Landing page completa</strong>
+                        </article>
+                        <article class="metric-card">
+                            <span>Foco prático</span>
+                            <strong>100% HTML5 + CSS3</strong>
+                        </article>
+                    </div>
+
+                    <div class="code-window" aria-hidden="true">
+                        <div class="window-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="window-body">
+                            <p>&lt;section class="hero"&gt;</p>
+                            <p class="indent">&lt;h1&gt;Curso de HTML5 e CSS3&lt;/h1&gt;</p>
+                            <p class="indent">&lt;p&gt;Layout moderno e responsivo&lt;/p&gt;</p>
+                            <p>&lt;/section&gt;</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-band reveal reveal-delay-2" aria-label="Indicadores do curso">
+                <article>
+                    <strong>4</strong>
+                    <span>blocos de aprendizado</span>
+                </article>
+                <article>
+                    <strong>8</strong>
+                    <span>exercícios guiados</span>
+                </article>
+                <article>
+                    <strong>3</strong>
+                    <span>breakpoints principais</span>
+                </article>
+                <article>
+                    <strong>0</strong>
+                    <span>dependência de JavaScript</span>
+                </article>
+            </section>
+
+            <section id="modulos" class="content-section">
+                <div class="section-heading reveal reveal-delay-1">
+                    <p class="eyebrow">Conteúdo do curso</p>
+                    <h2>Uma progressão pensada para construir base, repertório visual e confiança.</h2>
+                </div>
+
+                <div class="module-grid">
+                    <article class="module-card reveal reveal-delay-1">
+                        <span class="card-index">01</span>
+                        <h3>HTML5 semântico</h3>
+                        <p>Tags estruturais, hierarquia de conteúdo, acessibilidade inicial e boas práticas de marcação.</p>
+                    </article>
+
+                    <article class="module-card reveal reveal-delay-2">
+                        <span class="card-index">02</span>
+                        <h3>CSS3 moderno</h3>
+                        <p>Seletores, variáveis, espaçamento, tipografia, composição visual e organização do estilo.</p>
+                    </article>
+
+                    <article class="module-card reveal reveal-delay-3">
+                        <span class="card-index">03</span>
+                        <h3>Layouts responsivos</h3>
+                        <p>Flexbox, grid, unidades fluidas, contenção de largura e media queries realmente úteis.</p>
+                    </article>
+
+                    <article class="module-card reveal reveal-delay-4">
+                        <span class="card-index">04</span>
+                        <h3>Microinterações</h3>
+                        <p>Hover states, transições suaves, animações de entrada e refinamento visual sem excessos.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projetos" class="content-section projects-section">
+                <div class="projects-copy reveal reveal-delay-1">
+                    <p class="eyebrow">Projeto aplicado</p>
+                    <h2>Você termina com uma página de curso pronta para publicar.</h2>
+                    <p>
+                        O projeto final reúne cabeçalho, hero, cards, chamadas para ação, depoimentos e FAQ.
+                        O foco é unir clareza de código com qualidade visual em diferentes tamanhos de tela.
+                    </p>
+                </div>
+
+                <div class="project-showcase reveal reveal-delay-2">
+                    <article class="showcase-card showcase-large">
+                        <span>Entrega 01</span>
+                        <h3>Landing page institucional</h3>
+                        <p>Estrutura completa com ritmo visual, contraste adequado e hierarquia tipográfica consistente.</p>
+                    </article>
+                    <article class="showcase-card">
+                        <span>Entrega 02</span>
+                        <h3>Versão mobile refinada</h3>
+                        <p>Adaptação de espaçamentos, empilhamento inteligente e leitura confortável em telas menores.</p>
+                    </article>
+                    <article class="showcase-card">
+                        <span>Entrega 03</span>
+                        <h3>Biblioteca pessoal</h3>
+                        <p>Componentes reutilizáveis para você reaproveitar em portfólio, páginas de produto e landing pages.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="metodo" class="content-section method-section">
+                <div class="section-heading reveal reveal-delay-1">
+                    <p class="eyebrow">Método de ensino</p>
+                    <h2>Menos teoria solta, mais construção orientada por decisões reais de interface.</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item reveal reveal-delay-1">
+                        <span class="timeline-step">Passo 1</span>
+                        <h3>Estruturar antes de decorar</h3>
+                        <p>Você aprende a pensar a página em blocos semânticos, priorizando legibilidade e manutenção.</p>
+                    </article>
+
+                    <article class="timeline-item reveal reveal-delay-2">
+                        <span class="timeline-step">Passo 2</span>
+                        <h3>Estilizar com sistema</h3>
+                        <p>Cores, tipografia, radius, sombras e espaçamentos são organizados em variáveis para ganhar consistência.</p>
+                    </article>
+
+                    <article class="timeline-item reveal reveal-delay-3">
+                        <span class="timeline-step">Passo 3</span>
+                        <h3>Validar no responsivo</h3>
+                        <p>O layout é ajustado para evitar quebras, cortes e blocos apertados em larguras intermediárias.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section testimonial-section">
+                <div class="section-heading reveal reveal-delay-1">
+                    <p class="eyebrow">Resultados esperados</p>
+                    <h2>Ao fim do curso, você entende o porquê de cada decisão de layout.</h2>
+                </div>
+
+                <div class="testimonial-grid">
+                    <blockquote class="testimonial-card reveal reveal-delay-1">
+                        <p>"Finalmente entendi como deixar a versão mobile organizada sem desmontar a página inteira."</p>
+                        <cite>Aluno iniciante</cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card reveal reveal-delay-2">
+                        <p>"O curso mostra uma forma prática de transformar HTML e CSS básicos em uma interface apresentável."</p>
+                        <cite>Estudante de front-end</cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card reveal reveal-delay-3">
+                        <p>"As animações e transições entraram como acabamento, não como enfeite solto. Isso faz diferença."</p>
+                        <cite>Profissional em transição</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <section id="faq" class="content-section faq-section">
+                <div class="section-heading reveal reveal-delay-1">
+                    <p class="eyebrow">Perguntas frequentes</p>
+                    <h2>O curso foi pensado para quem quer evoluir com base técnica e resultado visual.</h2>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item reveal reveal-delay-1">
+                        <summary>Preciso saber programar antes?</summary>
+                        <p>Não. O curso parte dos fundamentos, mas chega em um nível que já permite construir páginas com acabamento profissional.</p>
+                    </details>
+                    <details class="faq-item reveal reveal-delay-2">
+                        <summary>Tem foco em responsividade mesmo?</summary>
+                        <p>Sim. O conteúdo foi desenhado para tratar mobile, tablet e desktop como parte do processo, não como ajuste de última hora.</p>
+                    </details>
+                    <details class="faq-item reveal reveal-delay-3">
+                        <summary>As animações dependem de JavaScript?</summary>
+                        <p>Não. Os efeitos visuais desta proposta usam apenas propriedades nativas do CSS3, com atenção a performance e usabilidade.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="inscricao" class="cta-section reveal reveal-delay-2">
+                <div>
+                    <p class="eyebrow">Pronto para começar?</p>
+                    <h2>Monte seu repertório em HTML5 e CSS3 com um projeto visualmente forte e responsivo.</h2>
+                </div>
+                <a class="button button-primary" href="mailto:curso@htmlcss.dev">Solicitar matrícula</a>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Curso autoral de HTML5 e CSS3, inspirado na estrutura de landing page da referência enviada, mas com layout, conteúdo e estilo próprios.</p>
+            <a href="#topo">Voltar ao topo</a>
+        </footer>
+    </div>
+</body>
+</html>
