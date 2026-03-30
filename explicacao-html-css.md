@@ -1,15 +1,12 @@
-# Explicação da estrutura HTML5 e da estilização CSS3
+# Explicação intercalada do HTML5 + CSS3
 
-Neste arquivo, a ideia é ler o projeto em duas camadas:
-
-1. **o HTML5 como estrutura** — como se fosse a planta de um ambiente;
-2. **o CSS3 como decoração e acabamento** — como se um decorador estivesse escolhendo cores, espaçamentos, alinhamentos e efeitos para valorizar cada parte dessa estrutura.
-
-A proposta abaixo segue o formato pedido: **código + explicação logo abaixo de cada bloco principal**.
+Neste arquivo, a leitura foi reorganizada no formato pedido: **cada bloco segue a ordem código HTML + explicação do HTML + código CSS correspondente + explicação do CSS correspondente**. Assim, a estrutura HTML5 aparece junto da sua "decoração" em CSS, até cobrir todo o código-fonte do projeto.
 
 ---
 
-## 1) Código HTML
+## 1) Estrutura inicial do documento
+
+### Código HTML
 
 ```html
 <!DOCTYPE html>
@@ -20,151 +17,19 @@ A proposta abaixo segue o formato pedido: **código + explicação logo abaixo d
     <title>Mestres do Front-End | Curso HTML5 & CSS3</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
-    <header>
-        <nav class="nav-container">
-            <a href="#" class="logo">HTML5.Expert</a>
-            
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">☰</label>
-
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#modulos">Módulos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#precos">Inscrição</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" id="inicio">
-            <h1>Domine o Front-End de Verdade</h1>
-            <p>Aprenda a criar interfaces modernas, responsivas e animadas utilizando apenas o poder puro do HTML5 e CSS3.</p>
-            <a href="#modulos" class="cta-btn">Começar Agora</a>
-        </section>
-
-        <section class="container" id="modulos">
-            <h2 class="section-title">O que você vai aprender</h2>
-            <div class="modules-grid">
-                <div class="card">
-                    <h3>01. Semântica HTML5</h3>
-                    <p>Estruture sites que o Google ama. Aprenda a usar tags como header, main, section e article de forma estratégica para SEO.</p>
-                </div>
-                <div class="card">
-                    <h3>02. CSS Flexbox & Grid</h3>
-                    <p>Esqueça os floats. Domine os sistemas de layout mais poderosos para criar alinhamentos complexos em minutos.</p>
-                </div>
-                <div class="card">
-                    <h3>03. Design Responsivo</h3>
-                    <p>Técnicas de Mobile-First e Media Queries para garantir que seu site brilhe em qualquer tamanho de tela.</p>
-                </div>
-                <div class="card">
-                    <h3>04. Keyframes & Efeitos</h3>
-                    <p>Traga vida ao seu código com transições suaves e animações complexas que retêm a atenção do usuário.</p>
-                </div>
-                <div class="card">
-                    <h3>05. Variáveis CSS (Themes)</h3>
-                    <p>Aprenda a criar sistemas de cores dinâmicos e manutenção simplificada usando Custom Properties.</p>
-                </div>
-                <div class="card">
-                    <h3>06. Acessibilidade (A11y)</h3>
-                    <p>Crie web para todos. Entenda como o CSS e HTML trabalham juntos para garantir o acesso de usuários com deficiência.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Mestres do Front-End. Feito com amor e código puro.</p>
-    </footer>
-
-</body>
-</html>
 ```
 
 ### Explicação do HTML
 
-#### `<!DOCTYPE html>` e `<html lang="pt-br">`
-- O documento começa informando ao navegador que a página usa **HTML5**.
-- Em seguida, `lang="pt-br"` avisa que o conteúdo está em português do Brasil, algo importante para acessibilidade, leitura por leitores de tela e entendimento semântico da página.
-
-#### `<head>`
-- O `<head>` concentra as configurações que preparam a página.
-- `<meta charset="UTF-8">` garante o uso correto de acentos e caracteres especiais.
+- `<!DOCTYPE html>` informa ao navegador que o documento usa **HTML5**.
+- `<html lang="pt-br">` define o idioma principal da página, melhorando semântica e acessibilidade.
+- O `<head>` concentra as configurações que preparam a página antes da renderização visual.
+- `<meta charset="UTF-8">` garante que acentos e caracteres especiais sejam exibidos corretamente.
 - `<meta name="viewport" ...>` ajuda a página a se adaptar melhor em telas menores.
-- `<title>` define o nome mostrado na aba do navegador.
-- O `<link>` importa a fonte **Outfit**, que depois será aplicada visualmente pelo CSS.
+- `<title>` define o texto da aba do navegador.
+- O `<link>` importa a fonte **Outfit**, que depois será usada pelo CSS na identidade visual do site.
 
-#### `<body>`
-- O `<body>` é a área visível da página.
-- Tudo o que o usuário enxerga está organizado dentro dele.
-
-#### `<header>`
-- O `<header>` funciona como o topo institucional da página.
-- Ele guarda a navegação principal e serve como a entrada visual do site.
-
-#### `<nav class="nav-container">`
-- A tag `<nav>` marca semanticamente a área de navegação.
-- A classe `nav-container` será usada pelo CSS para organizar logo, botão do menu mobile e lista de links.
-- Ou seja: o HTML entrega a estrutura; o CSS entra depois para alinhar e distribuir os elementos.
-
-#### `<a href="#" class="logo">HTML5.Expert</a>`
-- Esse link representa a marca textual do site.
-- A classe `logo` existe para que o CSS consiga dar destaque visual a esse nome.
-
-#### `<input type="checkbox" id="menu-toggle">` + `<label for="menu-toggle" class="menu-icon">☰</label>`
-- Aqui existe uma solução clássica de menu responsivo sem JavaScript.
-- O `input` do tipo checkbox funciona como um interruptor invisível.
-- A `label` com a classe `menu-icon` é o ícone clicável.
-- Como o `for="menu-toggle"` aponta para o `id="menu-toggle"`, clicar no ícone ativa ou desativa esse checkbox.
-- Depois, o CSS usa esse estado marcado para mostrar ou esconder o menu no mobile.
-
-#### `<ul class="nav-menu">`
-- A lista não ordenada agrupa os links principais do site.
-- A classe `nav-menu` será a responsável por transformar essa lista em menu horizontal no desktop e em painel vertical no mobile.
-
-#### `<main>`
-- O `<main>` delimita o conteúdo principal da página.
-- Isso melhora a semântica do documento e ajuda ferramentas de acessibilidade a entenderem onde está o foco central do conteúdo.
-
-#### `<section class="hero" id="inicio">`
-- A seção `hero` é o grande bloco de destaque da abertura do site.
-- O `id="inicio"` permite que o menu leve o usuário diretamente para essa área.
-- Dentro dela, o HTML traz três peças centrais: título, descrição e botão de ação.
-
-#### `<h1>`, `<p>` e `<a class="cta-btn">`
-- O `<h1>` é o título principal da página.
-- O `<p>` complementa esse título com uma explicação curta.
-- O link com classe `cta-btn` funciona como um botão visual de chamada para ação.
-- Mais uma vez, o HTML só organiza os papéis; o CSS virá como acabamento para transformar esse link em botão.
-
-#### `<section class="container" id="modulos">`
-- Essa segunda seção apresenta o conteúdo do curso.
-- O `id="modulos"` permite navegação por âncora a partir do menu e do botão principal.
-- A classe `container` cria uma área centralizada para o conteúdo não ficar espalhado demais na largura da tela.
-
-#### `<h2 class="section-title">`
-- O `<h2>` apresenta o título da seção de módulos.
-- A classe `section-title` existe para dar ao CSS um ponto específico de estilização desse subtítulo.
-
-#### `<div class="modules-grid">`
-- Essa `div` agrupa todos os cards do curso.
-- A classe `modules-grid` será usada para montar um layout em grade.
-
-#### `<div class="card">`
-- Cada `card` representa um módulo do curso.
-- Dentro de cada card existe um `<h3>` com o nome do módulo e um `<p>` com sua descrição.
-- O HTML aqui cria repetição estrutural consistente, e isso facilita muito o trabalho do CSS.
-
-#### `<footer>`
-- O rodapé fecha a página com uma informação institucional.
-- É uma área semântica própria do HTML5 para conteúdo final da página.
-
----
-
-## 2) Código CSS
+### Código CSS correspondente
 
 ```css
 :root {
@@ -183,14 +48,114 @@ A proposta abaixo segue o formato pedido: **código + explicação logo abaixo d
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
 }
+```
 
+### Explicação do CSS
+
+#### `:root`
+- O `:root` funciona como a central de estilo do projeto.
+- É como se o decorador definisse primeiro a paleta, os tons de texto, o fundo, a cor branca padrão e o ritmo das transições.
+- As variáveis como `--primary-color` e `--bg-light` serão reaproveitadas em várias partes do site.
+- Isso mantém coerência visual e facilita manutenção.
+
+#### `*`
+- O seletor universal `*` aplica uma preparação visual em praticamente todos os elementos.
+- `margin: 0` e `padding: 0` removem os espaçamentos automáticos do navegador.
+- `box-sizing: border-box` faz largura e altura incluírem padding e borda no cálculo, deixando o layout mais previsível.
+- `font-family: 'Outfit', sans-serif` espalha a tipografia base pelo documento.
+- Aqui existe um efeito amplo parecido com herança visual: muitos elementos já começam com essa fonte antes mesmo de receberem estilos mais específicos.
+
+---
+
+## 2) Estrutura do corpo da página
+
+### Código HTML
+
+```html
+<body>
+
+    <header>
+        <!-- navegação -->
+    </header>
+
+    <main>
+        <!-- conteúdo principal -->
+    </main>
+
+    <footer>
+        <!-- rodapé -->
+    </footer>
+
+</body>
+```
+
+### Explicação do HTML
+
+- O `<body>` é a área visível do documento.
+- Tudo o que o usuário enxerga fica dentro dele.
+- Dentro dessa estrutura, o HTML organiza a página em três grandes zonas semânticas:
+  - `<header>` para o topo e navegação;
+  - `<main>` para o conteúdo principal;
+  - `<footer>` para o rodapé.
+- Essa divisão facilita leitura, manutenção e acessibilidade.
+
+### Código CSS correspondente
+
+```css
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
+```
 
+### Explicação do CSS
+
+- O `body` funciona como o grande ambiente da página.
+- `background-color: var(--bg-light)` pinta o fundo geral com um tom claro.
+- `color: var(--text-dark)` define a cor-base dos textos.
+- Essa `color` pode ser herdada por muitos elementos filhos quando não existe uma regra mais específica sobrescrevendo esse valor.
+- `line-height: 1.6` melhora a leitura, deixando o texto mais arejado.
+- `overflow-x: hidden` evita rolagem horizontal indesejada.
+
+---
+
+## 3) Cabeçalho e navegação
+
+### Código HTML
+
+```html
+<header>
+    <nav class="nav-container">
+        <a href="#" class="logo">HTML5.Expert</a>
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <ul class="nav-menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#precos">Inscrição</a></li>
+        </ul>
+    </nav>
+</header>
+```
+
+### Explicação do HTML
+
+- O `<header>` representa o topo institucional da página.
+- Dentro dele, a tag `<nav>` marca semanticamente a área de navegação principal.
+- A classe `nav-container` existe para o CSS organizar internamente esse bloco.
+- O link com classe `logo` representa a marca textual do site.
+- O `input` com `id="menu-toggle"` é um checkbox usado como gatilho de menu mobile.
+- A `label` com classe `menu-icon` aponta para esse checkbox e vira o botão clicável do menu hambúrguer.
+- A lista `<ul class="nav-menu">` agrupa os links principais do site.
+
+### Código CSS correspondente
+
+```css
 header {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
@@ -243,7 +208,87 @@ header {
     cursor: pointer;
     font-size: 1.5rem;
 }
+```
 
+### Explicação do CSS
+
+#### `header`
+- O `header` recebe acabamento de barra superior fixa.
+- `background: rgba(255, 255, 255, 0.9)` cria um branco semitransparente.
+- `backdrop-filter: blur(10px)` adiciona o efeito de vidro fosco.
+- `position: fixed`, `top: 0` e `width: 100%` prendem o cabeçalho no topo da tela.
+- `z-index: 1000` garante que ele fique acima do restante da página.
+
+#### `.nav-container`
+- Essa classe decora o `<nav>` por dentro.
+- `max-width: 1200px` limita a largura máxima.
+- `margin: 0 auto` centraliza o bloco.
+- `display: flex` coloca os filhos em linha.
+- `justify-content: space-between` separa logo e menu.
+- `align-items: center` alinha verticalmente os itens.
+- `padding: 1rem 2rem` cria respiro interno.
+
+#### `.logo`
+- A classe `.logo` dá identidade visual à marca.
+- `font-weight: 700` deixa o nome mais forte.
+- `font-size: 1.5rem` aumenta sua presença.
+- `color: var(--primary-color)` aplica a cor principal do projeto.
+- `text-decoration: none` remove o sublinhado padrão do link.
+
+#### `.nav-menu`
+- A `.nav-menu` estiliza a lista de navegação como um menu horizontal.
+- `display: flex` posiciona os itens lado a lado.
+- `list-style: none` remove as bolinhas da lista.
+- `gap: 2rem` cria espaço equilibrado entre os links.
+
+#### `.nav-menu a`
+- Esse seletor atua apenas nos links `<a>` que estão dentro de `.nav-menu`.
+- Isso mostra contexto, não herança: o estilo vale para âncoras inseridas nesse bloco específico.
+- `color: var(--text-dark)` usa a cor-base escura para os links.
+- `font-weight: 500` dá firmeza ao texto do menu.
+- `transition: var(--transition-smooth)` suaviza mudanças de estado.
+
+#### `.nav-menu a:hover`
+- No hover, o link troca para a cor principal.
+- É um detalhe de destaque visual quando o usuário interage.
+
+#### `#menu-toggle`
+- O checkbox é escondido com `display: none`.
+- Ele continua existindo funcionalmente, mas não aparece visualmente.
+
+#### `.menu-icon`
+- A `.menu-icon` representa o ícone do menu hambúrguer.
+- No desktop ela começa escondida com `display: none`.
+- `cursor: pointer` avisa visualmente que o ícone pode ser clicado.
+
+---
+
+## 4) Seção principal de abertura (hero)
+
+### Código HTML
+
+```html
+<main>
+    <section class="hero" id="inicio">
+        <h1>Domine o Front-End de Verdade</h1>
+        <p>Aprenda a criar interfaces modernas, responsivas e animadas utilizando apenas o poder puro do HTML5 e CSS3.</p>
+        <a href="#modulos" class="cta-btn">Começar Agora</a>
+    </section>
+</main>
+```
+
+### Explicação do HTML
+
+- O `<main>` delimita o conteúdo principal da página.
+- Dentro dele, a seção `<section class="hero" id="inicio">` funciona como a abertura visual do site.
+- O `id="inicio"` permite navegação por âncora.
+- O `<h1>` é o título principal da página.
+- O `<p>` reforça a proposta da seção com um texto de apoio.
+- O link com classe `cta-btn` é semanticamente um link, mas visualmente será tratado como botão de chamada para ação.
+
+### Código CSS correspondente
+
+```css
 .hero {
     padding: 180px 2rem 100px;
     text-align: center;
@@ -272,6 +317,120 @@ header {
     animation: fadeInUp 0.8s 0.2s forwards;
 }
 
+.cta-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+    display: inline-block;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.cta-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+```
+
+### Explicação do CSS
+
+#### `.hero`
+- A `.hero` transforma a seção de abertura em um grande painel de destaque.
+- `padding: 180px 2rem 100px` cria espaço generoso, principalmente no topo, para compensar o cabeçalho fixo.
+- `text-align: center` centraliza o conteúdo textual.
+- `background: linear-gradient(...)` pinta a seção com um degradê suave.
+- `display: flex`, `flex-direction: column`, `justify-content: center` e `align-items: center` organizam título, texto e botão no centro.
+
+#### `.hero h1`
+- Esse seletor atua apenas no `<h1>` dentro da `.hero`.
+- Isso é contexto estrutural: o CSS não está estilizando qualquer `h1`, mas especificamente o da área principal.
+- `font-size: clamp(...)` torna o título responsivo.
+- `opacity: 0` e `transform: translateY(30px)` preparam a entrada animada.
+- `animation: fadeInUp 0.8s forwards` aplica a animação de surgimento.
+
+#### `.hero p`
+- Esse seletor atua apenas no parágrafo dentro da hero.
+- `color: var(--text-light)` quebra a herança da cor-base escura do `body` e usa um tom mais suave.
+- `max-width: 600px` evita linhas longas demais.
+- O atraso `0.2s` na animação faz o texto aparecer depois do título.
+
+#### `.cta-btn`
+- A `.cta-btn` pega um link comum e o decora como botão.
+- `background`, `padding`, `border-radius` e `box-shadow` criam a aparência de chamada principal.
+- `display: inline-block` ajuda o link a se comportar como elemento de botão.
+- `font-weight: 700` reforça o destaque.
+
+#### `.cta-btn:hover`
+- No hover, o botão troca para a cor secundária e cresce levemente.
+- Isso dá feedback visual de interação.
+
+#### `@keyframes fadeInUp`
+- A animação define o estado final dos elementos animados.
+- `opacity: 1` faz o elemento aparecer.
+- `transform: translateY(0)` devolve o conteúdo à posição normal.
+
+---
+
+## 5) Seção de módulos e cards
+
+### Código HTML
+
+```html
+<section class="container" id="modulos">
+    <h2 class="section-title">O que você vai aprender</h2>
+    <div class="modules-grid">
+        <div class="card">
+            <h3>01. Semântica HTML5</h3>
+            <p>Estruture sites que o Google ama. Aprenda a usar tags como header, main, section e article de forma estratégica para SEO.</p>
+        </div>
+        <div class="card">
+            <h3>02. CSS Flexbox & Grid</h3>
+            <p>Esqueça os floats. Domine os sistemas de layout mais poderosos para criar alinhamentos complexos em minutos.</p>
+        </div>
+        <div class="card">
+            <h3>03. Design Responsivo</h3>
+            <p>Técnicas de Mobile-First e Media Queries para garantir que seu site brilhe em qualquer tamanho de tela.</p>
+        </div>
+        <div class="card">
+            <h3>04. Keyframes & Efeitos</h3>
+            <p>Traga vida ao seu código com transições suaves e animações complexas que retêm a atenção do usuário.</p>
+        </div>
+        <div class="card">
+            <h3>05. Variáveis CSS (Themes)</h3>
+            <p>Aprenda a criar sistemas de cores dinâmicos e manutenção simplificada usando Custom Properties.</p>
+        </div>
+        <div class="card">
+            <h3>06. Acessibilidade (A11y)</h3>
+            <p>Crie web para todos. Entenda como o CSS e HTML trabalham juntos para garantir o acesso de usuários com deficiência.</p>
+        </div>
+    </div>
+</section>
+```
+
+### Explicação do HTML
+
+- A seção usa a classe `container` para centralizar o conteúdo e controlar largura.
+- O `id="modulos"` permite navegação por âncora a partir do menu e do botão principal.
+- O `<h2 class="section-title">` apresenta o título da seção.
+- A `<div class="modules-grid">` agrupa os cards em uma área pensada para layout em grade.
+- Cada `<div class="card">` representa um módulo do curso.
+- Dentro de cada card, o `<h3>` traz o nome do módulo e o `<p>` mostra a descrição.
+- A repetição dessa estrutura torna o HTML consistente e fácil de estilizar.
+
+### Código CSS correspondente
+
+```css
 .section-title {
     text-align: center;
     margin: 4rem 0 3rem;
@@ -327,32 +486,127 @@ header {
 .card:hover::after {
     width: 100%;
 }
+```
 
-.cta-btn {
-    background: var(--primary-color);
+### Explicação do CSS
+
+#### `.section-title`
+- A `.section-title` centraliza o título da seção e cria um respiro vertical forte.
+- Isso dá à abertura dos módulos um destaque visual claro.
+
+#### `.container`
+- A `.container` funciona como uma moldura invisível.
+- `max-width: 1200px` evita que o conteúdo fique espalhado demais.
+- `margin: 0 auto` centraliza a área.
+- `padding: 0 2rem` impede que o conteúdo encoste nas bordas laterais.
+
+#### `.modules-grid`
+- A `.modules-grid` organiza os cards como grade.
+- `display: grid` ativa o sistema de grid.
+- `grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))` permite que a quantidade de colunas se adapte à largura da tela.
+- `gap: 2rem` cria espaçamento uniforme entre os cards.
+
+#### `.card`
+- A classe `.card` transforma cada módulo em um cartão visual.
+- `background: var(--white)` destaca o card sobre o fundo claro do `body`.
+- `padding: 2.5rem` cria conforto interno.
+- `border-radius: 20px` arredonda os cantos.
+- `box-shadow` adiciona profundidade.
+- `position: relative` prepara o card para posicionar corretamente o pseudo-elemento `::after`.
+- `overflow: hidden` impede que esse detalhe decorativo escape da área do card.
+
+#### `.card:hover`
+- No hover, o card sobe levemente com `translateY(-10px)`.
+- A sombra aumenta e a borda ganha a cor principal.
+- O efeito faz o card parecer mais vivo e interativo.
+
+#### `.card h3`
+- Esse seletor estiliza apenas o `<h3>` dentro de `.card`.
+- Aqui existe contexto estrutural: o CSS refina o título do card sem afetar outros `h3` fora desse bloco.
+- `color: var(--primary-color)` reforça a identidade visual.
+
+#### `.card::after`
+- O pseudo-elemento `::after` cria uma barra decorativa no rodapé do card.
+- Como o card está com `position: relative`, essa barra consegue se posicionar em relação ao próprio card.
+- Ela nasce com `width: 0`, ficando invisível no estado inicial.
+
+#### `.card:hover::after`
+- No hover, a barra cresce até `width: 100%`.
+- Esse detalhe funciona como um acabamento animado de interação.
+
+---
+
+## 6) Rodapé
+
+### Código HTML
+
+```html
+<footer>
+    <p>&copy; 2026 Mestres do Front-End. Feito com amor e código puro.</p>
+</footer>
+```
+
+### Explicação do HTML
+
+- O `<footer>` fecha a página com conteúdo institucional.
+- O parágrafo interno exibe a mensagem final do site.
+- Semanticamente, essa é a área apropriada para encerramento do documento.
+
+### Código CSS correspondente
+
+```css
+footer {
+    background: var(--text-dark);
     color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: var(--transition-smooth);
-    display: inline-block;
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+    padding: 4rem 2rem;
+    text-align: center;
 }
+```
 
-.cta-btn:hover {
-    background: var(--secondary-color);
-    transform: scale(1.05);
-    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
-}
+### Explicação do CSS
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+- O `footer` recebe um fundo escuro para se diferenciar do restante da página.
+- `color: white` pinta o texto de branco.
+- Esse valor pode ser herdado pelos elementos internos, como o `<p>`, já que não há outra cor mais específica sobrescrevendo isso dentro do rodapé.
+- `padding: 4rem 2rem` cria uma área de fechamento confortável.
+- `text-align: center` centraliza a mensagem.
 
+---
+
+## 7) Responsividade e adaptação para telas menores
+
+### Código HTML
+
+```html
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-icon">☰</label>
+<ul class="nav-menu">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#modulos">Módulos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#precos">Inscrição</a></li>
+</ul>
+
+<section class="hero" id="inicio">
+    <h1>Domine o Front-End de Verdade</h1>
+    <p>Aprenda a criar interfaces modernas, responsivas e animadas utilizando apenas o poder puro do HTML5 e CSS3.</p>
+    <a href="#modulos" class="cta-btn">Começar Agora</a>
+</section>
+
+<div class="modules-grid">
+    <div class="card">...</div>
+</div>
+```
+
+### Explicação do HTML
+
+- Não existe um novo HTML exclusivo para a responsividade.
+- O que acontece é que o **mesmo HTML** já criado para menu, hero e grade de módulos é reaproveitado no mobile.
+- A adaptação acontece no CSS, que redecorará essas mesmas estruturas para telas menores.
+
+### Código CSS correspondente
+
+```css
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
@@ -383,206 +637,44 @@ header {
         grid-template-columns: 1fr;
     }
 }
-
-footer {
-    background: var(--text-dark);
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-}
 ```
 
 ### Explicação do CSS
 
-#### `:root`
-- O `:root` funciona como a base de decisões visuais do projeto.
-- Aqui o “decorador” escolhe a paleta principal, as cores de texto, a cor de fundo e até o ritmo das transições.
-- As variáveis como `--primary-color` e `--text-light` ajudam a manter consistência.
-- Quando outras classes usam `var(--primary-color)`, elas estão puxando o mesmo acabamento da fonte central de estilo.
-
-#### `*`
-- O seletor universal `*` atua em praticamente todos os elementos da página.
-- Ele remove margens e paddings padrão do navegador e define `box-sizing: border-box`, o que deixa o cálculo visual mais previsível.
-- Também aplica a fonte `'Outfit', sans-serif` em toda a interface.
-- Aqui existe um efeito de herança importante: como a tipografia é aplicada de forma ampla, muitos elementos já começam com a mesma identidade visual antes mesmo de receberem regras específicas.
-
-#### `body`
-- O `body` é como o grande ambiente onde tudo acontece.
-- `background-color: var(--bg-light)` pinta o fundo geral da página.
-- `color: var(--text-dark)` define a cor-base do texto.
-- Essa propriedade `color` costuma ser herdada por vários elementos filhos, então, quando um seletor mais específico não muda essa cor, o texto tende a seguir esse padrão escuro.
-- `line-height: 1.6` cria uma leitura mais confortável.
-- `overflow-x: hidden` evita rolagem horizontal acidental.
-
-#### `header`
-- O `header` recebe um tratamento de topo fixo, como se o decorador transformasse a entrada da página em uma barra elegante que acompanha o usuário.
-- O fundo semitransparente com `rgba(...)` e o `backdrop-filter: blur(10px)` criam um efeito sofisticado de vidro fosco.
-- `position: fixed`, `top: 0` e `width: 100%` mantêm esse bloco preso ao topo da janela.
-- `z-index: 1000` garante que ele fique acima dos outros elementos.
-
-#### `.nav-container`
-- Essa classe estiliza o `<nav>` por dentro.
-- O papel dela é organizar logo e menu como um decorador que distribui os itens principais em uma bancada horizontal.
-- `max-width: 1200px` limita a largura máxima.
-- `margin: 0 auto` centraliza o conjunto.
-- `display: flex`, `justify-content: space-between` e `align-items: center` alinham os elementos em linha e equilibram os espaços entre eles.
-
-#### `.logo`
-- A classe `.logo` destaca visualmente o nome da marca.
-- `font-weight: 700` e `font-size: 1.5rem` fazem a marca parecer mais forte e importante.
-- `color: var(--primary-color)` usa a cor principal do projeto.
-- `text-decoration: none` remove o sublinhado padrão do link, deixando o acabamento mais limpo.
-
-#### `.nav-menu`
-- A `.nav-menu` trabalha na lista de navegação como uma composição horizontal.
-- `display: flex` coloca os itens lado a lado.
-- `list-style: none` remove as bolinhas da lista.
-- `gap: 2rem` abre um respiro equilibrado entre cada item.
-
-#### `.nav-menu a`
-- Esse seletor não estiliza toda a lista, mas especificamente os links `<a>` que estão **dentro** de `.nav-menu`.
-- Aqui aparece um contexto claro de hierarquia: primeiro a lista é organizada por `.nav-menu`; depois os links internos recebem acabamento próprio.
-- `color: var(--text-dark)` sobrescreve qualquer variação e reforça a cor escura nos links.
-- `transition: var(--transition-smooth)` prepara o efeito suave para mudanças de estado.
-
-#### `.nav-menu a:hover`
-- Quando o usuário passa o mouse sobre o link, a cor muda para `var(--primary-color)`.
-- É como se o decorador adicionasse um brilho de destaque quando o item recebe atenção.
-
-#### `#menu-toggle`
-- O `#menu-toggle` esconde o checkbox com `display: none`.
-- Ele continua existindo funcionalmente, mas desaparece visualmente.
-- Esse é o mecanismo técnico que sustenta o menu mobile.
-
-#### `.menu-icon`
-- A `.menu-icon` representa o ícone do menu hambúrguer.
-- No estado normal ela fica escondida com `display: none`.
-- `cursor: pointer` mostra ao usuário que esse elemento é clicável.
-
-#### `.hero`
-- A classe `.hero` estiliza a seção principal da página como um grande painel de apresentação.
-- `padding: 180px 2rem 100px` cria bastante respiro, especialmente no topo, o que compensa o cabeçalho fixo.
-- `text-align: center` centraliza o conteúdo textual interno.
-- `background: linear-gradient(...)` cria um fundo suave, como se a abertura da página recebesse uma pintura em degradê mais nobre.
-- `display: flex`, `flex-direction: column`, `justify-content: center` e `align-items: center` alinham título, parágrafo e botão no centro do espaço.
-
-#### `.hero h1`
-- Esse seletor atua apenas no `<h1>` que está dentro de `.hero`.
-- Não é qualquer título da página: é especificamente o título do bloco principal.
-- `font-size: clamp(...)` deixa o tamanho responsivo.
-- `margin-bottom: 1.5rem` separa o título do parágrafo.
-- `opacity: 0` e `transform: translateY(30px)` colocam o elemento inicialmente invisível e um pouco deslocado para baixo.
-- `animation: fadeInUp 0.8s forwards` chama a animação que fará esse título surgir.
-
-#### `.hero p`
-- Esse seletor atua somente no parágrafo que está dentro da seção `.hero`.
-- Existe aqui uma combinação de contexto e herança: o texto já nasce dentro de uma área centralizada por `.hero`, mas recebe acabamento próprio para não competir com o título.
-- `font-size: 1.25rem` aumenta o texto de apoio.
-- `color: var(--text-light)` quebra a herança do `body` para usar uma cor mais suave.
-- `max-width: 600px` evita linhas longas demais.
-- A animação recebe atraso de `0.2s`, fazendo o parágrafo aparecer logo depois do título.
-
-#### `.section-title`
-- A `.section-title` estiliza o subtítulo “O que você vai aprender”.
-- `text-align: center` centraliza o texto.
-- `margin: 4rem 0 3rem` cria espaço acima e abaixo, separando bem essa chamada do restante da página.
-
-#### `.container`
-- A `.container` funciona como uma moldura de conteúdo.
-- Ela limita a largura da seção e centraliza os elementos internos.
-- É como se o decorador dissesse: “essa parte do ambiente precisa de bordas invisíveis para o conteúdo respirar melhor”.
-
-#### `.modules-grid`
-- A `.modules-grid` é quem organiza os cards dos módulos.
-- `display: grid` ativa o sistema de grade.
-- `grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))` faz o layout se adaptar à largura disponível.
-- Isso permite que os cards se rearranjem sem quebrar a composição visual.
-
-#### `.card`
-- A classe `.card` transforma cada bloco de módulo em um cartão visual.
-- `background: var(--white)` cria contraste com o fundo geral da página.
-- `padding: 2.5rem` dá espaço interno.
-- `border-radius: 20px` arredonda os cantos.
-- `box-shadow` cria profundidade.
-- `position: relative` prepara o card para receber o pseudo-elemento `::after`.
-- `overflow: hidden` garante que esse detalhe decorativo não vaze para fora.
-
-#### `.card:hover`
-- Quando o card recebe hover, ele sobe levemente com `transform: translateY(-10px)`.
-- A sombra cresce e a borda ganha a cor principal.
-- O efeito é o de um bloco que reage ao toque visual do usuário.
-
-#### `.card h3`
-- Esse seletor atua apenas no título `<h3>` dentro de `.card`.
-- De novo, não é herança pura: é um refinamento contextual.
-- O título do card recebe `color: var(--primary-color)`, criando destaque interno.
-- `margin-bottom: 1rem` afasta o título do texto descritivo.
-
-#### `.card::after`
-- O `::after` cria um pseudo-elemento decorativo no final do card.
-- Ele funciona como uma barra inferior que inicialmente nasce com `width: 0`.
-- Como `.card` está com `position: relative`, esse pseudo-elemento consegue se posicionar corretamente dentro do cartão.
-
-#### `.card:hover::after`
-- No hover, a barra se expande até `width: 100%`.
-- Isso cria um acabamento animado na base do card, como um detalhe de design que só aparece quando o usuário interage.
-
-#### `.cta-btn`
-- A `.cta-btn` transforma um link simples em botão visual.
-- `background`, `padding`, `border-radius` e `box-shadow` constroem a aparência de botão.
-- `display: inline-block` permite que o link aceite melhor dimensões e espaçamentos.
-- `font-weight: 700` reforça o tom de chamada principal.
-
-#### `.cta-btn:hover`
-- No hover, o botão troca para a cor secundária e cresce levemente com `transform: scale(1.05)`.
-- A sombra também fica mais intensa.
-- É um efeito de destaque para incentivar clique.
-
-#### `@keyframes fadeInUp`
-- Essa animação define o movimento de entrada dos elementos do hero.
-- O estado final faz `opacity` chegar a `1` e `transform` voltar para `translateY(0)`.
-- Na prática, o decorador faz o conteúdo “subir suavemente” para dentro da cena.
-
 #### `@media (max-width: 768px)`
-- Esse bloco adapta a decoração para telas menores.
-- Aqui o estilo muda de acordo com o tamanho da tela, respeitando o mesmo conteúdo HTML.
+- Esse bloco só entra em ação quando a tela tem até 768px de largura.
+- É aqui que o decorador adapta o mesmo ambiente para celular e tablet.
 
-#### `.menu-icon` dentro do `@media`
-- Em telas menores, a `.menu-icon` passa a usar `display: block`.
-- Isso faz o botão do menu aparecer apenas no mobile.
+#### `.menu-icon` no mobile
+- A `.menu-icon` muda de `display: none` para `display: block`.
+- Assim, o ícone hambúrguer passa a aparecer nas telas menores.
 
-#### `.nav-menu` dentro do `@media`
-- O menu deixa de ser uma linha horizontal e passa a virar um painel vertical.
-- `position: absolute`, `top: 100%` e `left: -100%` colocam o menu fora da tela inicialmente.
-- `flex-direction: column` reorganiza os itens em coluna.
-- O CSS aqui literalmente redecorou a mesma estrutura HTML para outro contexto de uso.
+#### `.nav-menu` no mobile
+- O menu deixa de ser horizontal e passa a funcionar como painel vertical.
+- `position: absolute` e `top: 100%` posicionam o menu logo abaixo do cabeçalho.
+- `left: -100%` joga o menu para fora da tela inicialmente.
+- `flex-direction: column` reorganiza os links em coluna.
+- `height: 100vh` amplia a área do painel.
 
 #### `#menu-toggle:checked ~ .nav-menu`
-- Esse seletor é um dos pontos mais interessantes do arquivo.
-- Ele significa: “quando o checkbox com id `menu-toggle` estiver marcado, a `.nav-menu` irmã que vem depois dele deve mudar de posição”.
-- O `~` é um combinador de irmãos, não herança.
-- Com `left: 0`, o menu entra na tela.
-- Ou seja, o comportamento visual mobile nasce apenas da relação entre HTML estruturado e CSS contextual.
+- Esse seletor significa: quando o checkbox `#menu-toggle` estiver marcado, a `.nav-menu` irmã seguinte deve mudar.
+- O `~` é combinador de irmãos, não herança.
+- `left: 0` traz o menu para dentro da tela.
+- Esse é o ponto em que HTML e CSS trabalham juntos para criar comportamento visual sem JavaScript.
 
-#### `.hero` dentro do `@media`
-- O `padding-top` cai para `140px`.
-- Isso ajusta o espaço do topo em telas menores para evitar exagero vertical.
+#### `.hero` no mobile
+- O `padding-top` da hero é reduzido para `140px`.
+- Isso evita excesso de espaço vertical em telas menores.
 
-#### `.modules-grid` dentro do `@media`
+#### `.modules-grid` no mobile
 - A grade passa para `grid-template-columns: 1fr`.
-- Em outras palavras, os cards ficam em coluna única no celular.
-
-#### `footer`
-- O rodapé recebe fundo escuro e texto branco.
-- Como `color: white` é aplicado no próprio `footer`, os textos internos tendem a herdar essa cor, salvo alguma sobrescrita mais específica.
-- `text-align: center` centraliza o conteúdo.
-- `padding: 4rem 2rem` cria uma área de fechamento confortável e bem destacada.
+- Na prática, os cards deixam de ocupar várias colunas e passam a ficar em coluna única.
 
 ---
 
-## 3) Leitura final da relação entre HTML e CSS
+## 8) Leitura final do conjunto
 
-- O **HTML5** monta a estrutura lógica da página: topo, navegação, área principal, cards e rodapé.
-- O **CSS3** entra como um decorador que estiliza essa estrutura: define cores, organiza layout, cria profundidade, anima a entrada dos elementos e adapta o conteúdo para o mobile.
-- Sempre que aparece algo como `.hero h1`, `.hero p` ou `.card h3`, o CSS está mostrando que o acabamento depende do **contexto do elemento dentro da estrutura HTML**.
-- Já quando vemos propriedades como `color` ou `font-family`, pode existir **herança visual**, porque filhos costumam aproveitar características definidas em elementos pais, a menos que outra regra mais específica sobrescreva esse comportamento.
+- O HTML5 monta a estrutura lógica: documento, corpo, cabeçalho, navegação, hero, módulos, cards e rodapé.
+- O CSS3 entra como o decorador dessa estrutura: define cores, espaçamentos, alinhamentos, profundidade, animação e responsividade.
+- Quando aparecem seletores como `.hero h1`, `.hero p`, `.nav-menu a` e `.card h3`, o estilo depende do **contexto do elemento dentro da estrutura HTML**.
+- Quando aparecem propriedades como `color` e `font-family`, pode haver **herança visual** para os filhos, desde que nenhuma regra mais específica sobrescreva esse comportamento.
